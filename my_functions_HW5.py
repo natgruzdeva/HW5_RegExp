@@ -1,4 +1,5 @@
 import re
+import os
 
 def add_salt(match: re.Match) -> str:
     """
@@ -47,3 +48,38 @@ def get_chords(filepath: str) -> set:
     chords = re.findall(pattern, text)
     
     return set(chords)
+
+
+def rename_files(
+    dir: str,
+    pattern: str,
+    new_pattern: str | None = None,
+    sample_names: dict[str, str] | None = None,
+    to_replace: bool = False,
+) -> None:
+    """Rename or copy files by pattern, by dictionary, or sequentially by both"""
+    
+    for filename in os.listdir(dir):
+        old_path = os.path.join(dir, filename)
+        if not os.path.isfile(old_path):
+            continue
+        if not re.search(pattern, filename):
+            continue
+
+        new_name = filename
+
+        if new_pattern is not None: # Replace with pattern
+            new_name = re.sub(pattern, new_pattern, new_name)
+        if sample_names: # Replace with dictionary
+            for old_sample, rep_sample in sample_names.items():
+                new_name = re.sub(r'\b' + re.escape(old_sample) + r'\b', rep_sample, new_name)
+        if new_name == filename: # Skip if file hasn't change name
+            continue
+
+        new_path = os.path.join(dir, new_name)
+
+        if to_replace:
+            os.replace(old_path, new_path)
+        else:
+            with open(old_path, "rb") as src, open(new_path, "wb") as dst:
+                dst.write(src.read())
