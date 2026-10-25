@@ -56,8 +56,8 @@
 Дополнительные баллы: 
 - В README приложена музыка - **4 доп. балла** (8 доп. баллов если в вашем исполнении)
 
-[La femme - packshot] (https://open.spotify.com/track/3KlQYJRlX0o93BQ2pQVb7x?si=fTWb-7pySMqstuT8ojLzKQ&utm_source=copy-link)
-[Romare - all night] https://open.spotify.com/track/04jqhpf3oV06HtlmthfcZZ?si=Oxx9uK5dTlS8MAacJnCugA&utm_source=copy-link
+* [La femme - packshot](https://open.spotify.com/track/3KlQYJRlX0o93BQ2pQVb7x?si=fTWb-7pySMqstuT8ojLzKQ&utm_source=copy-link)
+* [Romare - all night](https://open.spotify.com/track/04jqhpf3oV06HtlmthfcZZ?si=Oxx9uK5dTlS8MAacJnCugA&utm_source=copy-link)
 
 
 Удачи! ✨✨
