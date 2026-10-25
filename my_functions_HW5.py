@@ -72,7 +72,7 @@ def rename_files(
             new_name = re.sub(pattern, new_pattern, new_name)
         if sample_names: # Replace with dictionary
             for old_sample, rep_sample in sample_names.items():
-                new_name = re.sub(r'\b' + re.escape(old_sample) + r'\b', rep_sample, new_name)
+                new_name = re.sub(r'(?<![A-Za-z0-9])' + re.escape(old_sample) + r'(?![A-Za-z0-9])', rep_sample, new_name)
         if new_name == filename: # Skip if file hasn't change name
             continue
 
